@@ -6,11 +6,11 @@ A fee can be a flat rate amount or percentage-based, calculated inclusively or e
 
 To understand how the commission fee calculations work, let’s take a look at the following examples:
 
-*Flat Amount Fee*: Vendor sells a £10.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of £5.00. Since we are charging all vendors a flat rate fee of £0.50, the vendor ends up with an adjusted commission amount of £4.50. The final commission amount is calculated by deducting the fee (£0.50) from the base (£5.00) amount.
+**Flat Amount Fee**: Vendor sells a £10.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of £5.00. Since we are charging all vendors a flat rate fee of £0.50, the vendor ends up with an adjusted commission amount of £4.50. The final commission amount is calculated by deducting the fee (£0.50) from the base (£5.00) amount.
 
-*Percentage (Exclusive) Fee*: Vendor sells a £20.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of £10.00. Since we are charging all vendors a percentage fee of 10%, the calculated fee would be £1.00 (10 * .1), for which the vendor ends up with an adjusted commission amount of £9.00 (10 – (10 * .1)).
+**Percentage (Exclusive) Fee**: Vendor sells a £20.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of £10.00. Since we are charging all vendors a percentage fee of 10%, the calculated fee would be £1.00 (10 * .1), for which the vendor ends up with an adjusted commission amount of £9.00 (10 – (10 * .1)).
 
-*Percentage (Inclusive) Fee*: Vendor sells a £20.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of £10.00. Since we are using the inclusive calculation type, the “fee” is subsumed within the base commission amount (£10.00). In this instance we are charging the vendor a 20% fee, which results in £1.67 (10 – (10 / 1.20)). However, because we are charging a fee to the recipient, we adjust the base commission amount to £8.33.
+**Percentage (Inclusive) Fee**: Vendor sells a £20.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of £10.00. Since we are using the inclusive calculation type, the “fee” is subsumed within the base commission amount (£10.00). In this instance we are charging the vendor a 20% fee, which results in £1.67 (10 – (10 / 1.20)). However, because we are charging a fee to the recipient, we adjust the base commission amount to £8.33.
 
 ## Features
 
