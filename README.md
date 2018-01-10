@@ -1,6 +1,6 @@
 ## [Easy Digital Downloads - Commission Fees](https://sellcomet.com/downloads/commission-fees/)
 
-Commission Fees allows you to charge vendors an additional flat rate amount or percentage fee on each transaction. This allows you to offset payment processing fees, Amazon S3 file delivery costs, or calculate and retain withholding tax amounts for accounting or compliancy purposes.
+Commission Fees for Easy Digital Downloads allows you to charge vendors an additional flat rate amount or percentage fee on each transaction. This allows you to offset payment processing fees, Amazon S3 file delivery costs, or calculate and retain withholding tax amounts for accounting or compliancy purposes.
 
 A fee can be a flat rate amount or percentage-based, calculated inclusively or exclusively, a rate globally set (applied by default to all commission recipients), or on a per-download or per-user basis. Similarly, fees can be disabled for specific products or users.
 
