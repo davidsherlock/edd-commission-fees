@@ -4,9 +4,9 @@
  *
  * This class handles commissions details report export.
  *
- * @package     EDD\CommissionFees
+ * @package     EDD\Commission_Fees
  * @subpackage  Admin/Reports
- * @copyright   Copyright (c) 2017, Sell Comet
+ * @copyright   Copyright (c) 2018, Sell Comet
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0.0
  */
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class EDD_Batch_Commissions_Fees_Report_Details_Export extends EDD_Batch_Export {
+class EDD_Batch_Commission_Fees_Report_Export extends EDD_Batch_Export {
 
 
 	/**
@@ -33,7 +33,7 @@ class EDD_Batch_Commissions_Fees_Report_Details_Export extends EDD_Batch_Export 
 	 * @access      public
 	 * @var         string
 	 */
-	public $export_type = 'commissions_report_fee_details';
+	public $export_type = 'commissions_report_fees';
 
 	private $args;
 
@@ -81,11 +81,10 @@ class EDD_Batch_Commissions_Fees_Report_Details_Export extends EDD_Batch_Export 
 			__( 'Type', 'edd-commission-fees' ),
 			__( 'Rate', 'edd-commission-fees' ),
 			__( 'Status', 'edd-commission-fees' ),
-			__( 'Fee', 'edd-commission-fees' ),
+			__( 'Fee Amount', 'edd-commission-fees' ),
 			__( 'Fee Rate', 'edd-commission-fees' ),
 			__( 'Fee Type', 'edd-commission-fees' ),
-			__( 'Calculation Base', 'edd-commission-fees' ),
-			__( 'Base Amount', 'edd-commission-fees' ),
+			__( 'Fee Status', 'edd-commission-fees' ),
 			__( 'Date Created', 'edd-commission-fees' ),
 			__( 'Date Paid', 'edd-commission-fees' ),
 		);
@@ -124,7 +123,7 @@ class EDD_Batch_Commissions_Fees_Report_Details_Export extends EDD_Batch_Export 
 
 				$commission = eddc_get_commission( $commission->id );
 
-				$commission_meta = $commission->get_meta( '_edd_commission_fees', false );
+				$commission_meta = $commission->get_meta( '_edd_commission_fees', true );
 
 				if ( empty( $commission_meta ) ) {
 					$commission_meta = array();
@@ -137,16 +136,15 @@ class EDD_Batch_Commissions_Fees_Report_Details_Export extends EDD_Batch_Export 
 					'download_id'   => ! empty( $download ) ? $commission->download_id : __( 'N/A', 'eddc' ),
 					'download_name' => ! empty( $download ) ? $download_name : __( 'N/A', 'eddc' ),
 					'payment_id'    => $commission->payment_id,
-					'amount'        => $commission->amount,
+					'amount'        => edd_format_amount( $commission->amount ),
 					'currency'      => $commission->currency,
 					'type'          => $commission->type,
 					'rate'          => $commission->rate,
 					'status'        => $commission->status,
-					'fee'						=> ! empty( $commission_meta[0]['fee'] ) 			 ? edd_format_amount ( $commission_meta[0]['fee'] ) : __( 'N/A', 'edd-commission-fees' ),
-					'fee_rate'			=> ! empty( $commission_meta[0]['rate'] ) 		 ? $commission_meta[0]['rate'] : __( 'N/A', 'edd-commission-fees' ),
-					'fee_type'			=> ! empty( $commission_meta[0]['calc_base'] ) ? $commission_meta[0]['calc_base'] : __( 'N/A', 'edd-commission-fees' ),
-					'calc_base'			=> ! empty( $commission_meta[0]['calc_type'] ) ? $commission_meta[0]['calc_type'] : __( 'N/A', 'edd-commission-fees' ),
-					'base_amount'		=> ! empty( $commission_meta[0]['base_amount'] ) ? edd_format_amount ( $commission_meta[0]['base_amount'] ) : __( 'N/A', 'edd-commission-fees' ),
+					'fee_amount'	=> ! empty( $commission_meta['fee'] )    ? edd_format_amount( $commission_meta['fee'] ) : __( 'N/A', 'edd-commission-fees' ),
+					'fee_rate'		=> ! empty( $commission_meta['rate'] )   ? $commission_meta['rate']   : __( 'N/A', 'edd-commission-fees' ),
+					'fee_type'		=> ! empty( $commission_meta['type'] )   ? $commission_meta['type']   : __( 'N/A', 'edd-commission-fees' ),
+					'fee_status'	=> ! empty( $commission_meta['status'] ) ? $commission_meta['status'] : __( 'N/A', 'edd-commission-fees' ),
 					'date_created'  => $commission->date_created,
 					'date_paid'     => $commission->date_paid,
 				);

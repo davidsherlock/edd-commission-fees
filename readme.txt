@@ -1,60 +1,93 @@
-=== Commission Fees ===
-Contributors: Sell Comet
-Donate link: https://sellcomet.com/downloads/commission-fees/
-Tags: Add-On, Commissions, Easy Digital Downloads, EDD, Extension, Fees, Marketplace, Plugin, Vendors, WordPress
+=== Easy Digital Downloads - Commission Fees ===
+Contributors: sellcomet, mandyjonesmusic
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LLR26ABB7C39Q
+Tags: easy digital downloads, digital, download, downloads, edd, sellcomet, commissions, fees, ecommerce, e-store, eshop, marketplace, vendors, transaction, paypal
 Requires at least: 4.0
-Tested up to: 4.8
+Tested up to: 4.9.2
 Stable tag: trunk
 License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Charge commission recipients an additional flat rate amount or percentage fee on each transaction.
+Charge vendors an additional flat amount or percentage fee on each transaction.
 
 == Description ==
 
-Commission Fees allows you to charge Easy Digital Downloads Commissions recipients (commonly referred to as “vendors”) an additional flat rate amount or percentage fee on each transaction. This allows you to offset payment processing fees, Amazon S3 file delivery costs, or calculate and retain withholding tax amounts for accounting or compliancy purposes.
+**Commission Fees** for Easy Digital Downloads allows you to charge vendors an additional flat amount or percentage fee on each transaction. This allows you to offset payment processing fees, file delivery costs, as well as calculate and retain withholding tax amounts for accounting or compliancy purposes.
 
-A fee can be a flat rate amount or percentage-based, calculated inclusively or exclusively, a rate globally set (applied by default to all commission recipients), or on a per-download or per-user basis. Similarly, fees can be disabled for specific products or users.
+A fee can be either a flat rate amount or percentage-based, with the type set on a per-download basis, and rate set either globally (applied by default to all commission recipients), or overridden on a per-download or per-user basis. This allows for flexible fee structures and streamlined, granular control over your commissions.
+
+== Use-case Examples ==
+
+Let’s look at some real-world examples of how Commission Fees could potentially be utilised in different scenarios:
+
+* All vendors receive 70% for each product sold on your store. To offset PayPal fees, you charge all vendors an additional $0.25 to help absorb payment processing fees.
+* Some products contain large files. For these products you need to charge a higher percentage fee of 2.5% to cover Amazon S3 file delivery costs.
+* One product has multiple vendors receiving commissions and you want to set their commission fees independently.
+
+== Understanding Fees ==
 
 To understand how the commission fee calculations work, let’s take a look at the following examples:
 
-**Flat Amount Fee**: Vendor sells a £10.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of £5.00. Since we are charging all vendors a flat rate fee of £0.50, the vendor ends up with an adjusted commission amount of £4.50. The final commission amount is calculated by deducting the fee (£0.50) from the base (£5.00) amount.
+Flat Rate Amount: Vendor sells a $10.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of $5.00. Since we are charging all vendors a flat rate fee of $0.25, the vendor ends up with an adjusted commission amount of $4.75. The final commission amount is calculated by deducting the fee ($0.25) from the base amount ($5.00).
 
-**Percentage (Exclusive) Fee**: Vendor sells a £20.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of £10.00. Since we are charging all vendors a percentage fee of 10%, the calculated fee would be £1.00 (10 * .1), for which the vendor ends up with an adjusted commission amount of £9.00 (10 – (10 * .1)).
+Percentage Fee: Vendor sells a $20.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of $10.00. Since we are charging all vendors a percentage fee of 10%, the calculated fee would be $1.00 (10 * .1), which means the vendor ends up with an adjusted commission amount of $9.00 (10 – (10 * .1)).
 
-**Percentage (Inclusive) Fee**: Vendor sells a £20.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of £10.00. Since we are using the inclusive calculation type, the “fee” is subsumed within the base commission amount (£10.00). In this instance we are charging the vendor a 20% fee, which results in £1.67 (10 – (10 / 1.20)). However, because we are charging a fee to the recipient, we adjust the base commission amount to £8.33.
+== Features ==
 
-**Features**
-
-* Ability to calculate fees either exclusively or inclusively
-* Fee rates can be set (and disabled) on a global, per-user, or per-download basis
-* Flat rate amount and percentage-based fee types
-* Includes two email tags – {fee} and {fee_amount} which can be included in commission notifications
-* Ability to disable automatic fee adjustments and store the calculated amounts for future use
-* Seamless integration into the commission’s admin panel, displaying the commission fee amount, type, calculation basis (exclusive or inclusive) and store commission/earnings
-* Comprehensive fee report – export a detailed “fees” report containing comprehensive commission and associated fee metadata
-* Display fees to vendors – optionally enable “fees” to be displayed on the commission’s shortcodes, so vendors can see how much was charged per transaction
-* Commission Fees is translation-ready and contains a British English (UK) POT file to get you started!
-* Easily extendable – have a specific use-case? Commission Fees includes plenty of developer-ready filters and action hooks to make it possible!
+* Set commission fees independently on a per download, per user, or global basis
+* Easily disable fees for specific users or downloads
+* Set different fees for vendors receiving commissions on the same product
+* Set a fallback, or default global fee (such as $0.25) that applies to all products by default
+* View a comprehensive fee report graph showing fees collected for any given date range
+* Ability to revoke fees for specific commission records, or in bulk
+* Ability to recalculate commission fees, even for commissions which previously had no fee applied
+* Includes two new email tags – `{fee}` and `{fee_rate}` which can be included in commission notification emails
+* Includes a new `[edd_commission_fees_overview]` short code allowing your vendors to view the total unpaid, paid, and revoked fees
+* Records a detailed note within the payment record when a fee has been charged
+* Integrates seamlessly with Easy Digital Downloads - Simple Shipping and AffiliateWP commission adjustments
+* Export a detailed “Fees” report containing comprehensive commission and associated fee data
+* Seamless integration with Easy Digital Downloads and Commissions settings
+* Translation-ready and contains a POT file to help get you started translating into your own native language
+* Have a specific use-case? Commission Fees includes plenty of developer-ready filters and action hooks to make it possible!
 * Developed using the best practices, with security, extensibility, and readability in mind
 
-> Notice: This extension requires Easy Digital Downloads (free) and Commissions (minimum version of 3.4 to function) (paid). Refunds will not be granted to customers who do not meet this criteria.
+This plugin requires [Easy Digital Downloads](http://wordpress.org/extend/plugins/easy-digital-downloads/ "Easy Digital Downloads") and [Commissions](https://easydigitaldownloads.com/downloads/commissions/ "Commissions").
+
+== Bugs ==
+
+If you find an issue, let us know [here](https://github.com/davidsherlock/edd-commission-fees/issues?state=open)!
+
+== Support ==
+
+Please visit the [support page](https://wordpress.org/support/plugin/edd-commission-fees) if you need to submit a support request.
+
+== Contributions ==
+
+Anyone is welcome to contribute to Commission Fees.
+
+There are various ways you can contribute:
+
+* Raise an [Issue](https://github.com/davidsherlock/edd-commission-fees/issues) on GitHub
+* Send us a Pull Request with your bug fixes and/or new features. Please open an issue beforehand if one does not currently exist.
+* Provide feedback and suggestions on [enhancements](https://github.com/davidsherlock/edd-commission-fees/issues?direction=desc&labels=Enhancement&page=1&sort=created&state=open)
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+1. Unpack the entire contents of this plugin zip file into your `wp-content/plugins/` folder locally
+1. Upload to your site
+1. Navigate to `wp-admin/plugins.php` on your site (your WP Admin plugin page)
+1. Activate this plugin
+1. That's it! You can configure the rates under the download taxonomies.
 
-e.g.
+OR you can just install it with WordPress by going to Plugins >> Add New >> and type this plugin's name
 
-1. Upload the plugin files to the `/wp-content/plugins/edd-commission-fees` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
-1. Use the Settings->Plugin Name screen to configure the plugin
-1. (Make your instructions match the desired user flow for activating and installing your plugin. Include any steps that might be needed for explanatory purposes)
+== Frequently Asked Questions ==
+
+== Screenshots ==
+
+== Upgrade Notice ==
 
 == Changelog ==
 
-Version 1.0.0, November 19, 2017
-
-Initial Release
-
-== Upgrade Notice ==
+= 1.0.0, January 29, 2018 =
+* Initial release
