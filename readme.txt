@@ -28,9 +28,9 @@ Let’s look at some real-world examples of how Commission Fees could potentiall
 
 To understand how the commission fee calculations work, let’s take a look at the following examples:
 
-Flat Rate Amount: Vendor sells a $10.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of $5.00. Since we are charging all vendors a flat rate fee of $0.25, the vendor ends up with an adjusted commission amount of $4.75. The final commission amount is calculated by deducting the fee ($0.25) from the base amount ($5.00).
+**Flat Rate Amount**: Vendor sells a $10.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of $5.00. Since we are charging all vendors a flat rate fee of $0.25, the vendor ends up with an adjusted commission amount of $4.75. The final commission amount is calculated by deducting the fee ($0.25) from the base amount ($5.00).
 
-Percentage Fee: Vendor sells a $20.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of $10.00. Since we are charging all vendors a percentage fee of 10%, the calculated fee would be $1.00 (10 * .1), which means the vendor ends up with an adjusted commission amount of $9.00 (10 – (10 * .1)).
+**Percentage Fee**: Vendor sells a $20.00 product, for which he/she receives 50% of the item price, resulting in a base commission amount of $10.00. Since we are charging all vendors a percentage fee of 10%, the calculated fee would be $1.00 (10 * .1), which means the vendor ends up with an adjusted commission amount of $9.00 (10 – (10 * .1)).
 
 == Features ==
 
@@ -45,7 +45,7 @@ Percentage Fee: Vendor sells a $20.00 product, for which he/she receives 50% of 
 * Includes a new `[edd_commission_fees_overview]` short code allowing your vendors to view the total unpaid, paid, and revoked fees
 * Records a detailed note within the payment record when a fee has been charged
 * Integrates seamlessly with Easy Digital Downloads - Simple Shipping and AffiliateWP commission adjustments
-* Export a detailed “Fees” report containing comprehensive commission and associated fee data
+* Export a detailed report containing comprehensive commission and associated fee meta data
 * Seamless integration with Easy Digital Downloads and Commissions settings
 * Translation-ready and contains a POT file to help get you started translating into your own native language
 * Have a specific use-case? Commission Fees includes plenty of developer-ready filters and action hooks to make it possible!
@@ -77,7 +77,7 @@ There are various ways you can contribute:
 1. Upload to your site
 1. Navigate to `wp-admin/plugins.php` on your site (your WP Admin plugin page)
 1. Activate this plugin
-1. That's it! You can configure the rates under the download taxonomies.
+1. That's it!
 
 OR you can just install it with WordPress by going to Plugins >> Add New >> and type this plugin's name
 
