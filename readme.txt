@@ -42,11 +42,11 @@ To understand how the commission fee calculations work, let’s take a look at t
 * Ability to revoke fees for specific commission records, or in bulk
 * Ability to recalculate commission fees, even for commissions which previously had no fee applied
 * Includes two new email tags – `{fee}` and `{fee_rate}` which can be included in commission notification emails
-* Includes a new `[edd_commission_fees_overview]` short code allowing your vendors to view the total unpaid, paid, and revoked fees
+* Includes a new `[edd_commission_fees]` short code allowing your vendors to view the total unpaid, paid, and revoked fees
 * Records a detailed note within the payment record when a fee has been charged
-* Integrates seamlessly with Easy Digital Downloads - Simple Shipping and AffiliateWP commission adjustments
+* Works perfectly with Simple Shipping, AffiliateWP and Recurring Subscriptions
 * Export a detailed report containing comprehensive commission and associated fee meta data
-* Seamless integration with Easy Digital Downloads and Commissions settings
+* Seamless integration with Easy Digital Downloads and Commissions
 * Translation-ready and contains a POT file to help get you started translating into your own native language
 * Have a specific use-case? Commission Fees includes plenty of developer-ready filters and action hooks to make it possible!
 * Developed using the best practices, with security, extensibility, and readability in mind
@@ -88,6 +88,11 @@ OR you can just install it with WordPress by going to Plugins >> Add New >> and 
 == Upgrade Notice ==
 
 == Changelog ==
+
+= 1.0.1, January 30, 2018 =
+* Renamed short code from [edd_commission_fees_overview] to [edd_commission_fees] for ease of use
+* Improved filter usage and general code base improvements
+* Added support for Recurring Subscriptions
 
 = 1.0.0, January 29, 2018 =
 * Initial release

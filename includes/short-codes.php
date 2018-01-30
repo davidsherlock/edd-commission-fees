@@ -29,7 +29,7 @@ function eddcf_user_commission_fees_overview_shortcode( $atts ) {
 
 	return eddcf_user_commission_fees_overview( $user_id );
 }
-add_shortcode( 'edd_commission_fees_overview', 'eddcf_user_commission_fees_overview_shortcode' );
+add_shortcode( 'edd_commission_fees', 'eddcf_user_commission_fees_overview_shortcode' );
 
 
 /**

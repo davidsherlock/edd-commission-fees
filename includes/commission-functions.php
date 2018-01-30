@@ -80,7 +80,7 @@ function eddcf_relculate_commission_fee( $commission_id = 0 ) {
 	$commission = new EDD_Commission( $commission_id );
 
 	// If the payment record does not exist, bail and return the current commission amount
-	if ( false === edd_check_for_existing_payment( (int) $commission->payment_id ) ) {
+	if ( false === eddcf_check_for_existing_payment( (int) $commission->payment_id ) ) {
 		return $commission->amount;
 	}
 
@@ -704,4 +704,24 @@ function eddcf_get_default_fee_rate() {
 function eddcf_user_fee_disabled( $user_id = 0 ) {
 	$ret = (bool) get_user_meta( $user_id, 'eddcf_disable_user_commission_fees', true );
 	return apply_filters( 'eddcf_user_fee_disabled', $ret, $user_id );
+}
+
+
+/**
+ * Check For Existing Payment
+ *
+ * @access      public
+ * @param       int $payment_id The payment ID
+ * @since       1.0.0
+ * @return      bool
+ */
+function eddcf_check_for_existing_payment( $payment_id ) {
+	$exists  = false;
+	$payment = new EDD_Payment( $payment_id );
+
+	if ( $payment_id === $payment->ID && 'publish' === $payment->status || 'edd_subscription' === $payment->status ) {
+		$exists = true;
+	}
+
+	return $exists;
 }

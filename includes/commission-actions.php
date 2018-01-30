@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
   * @param       int $payment_id The commission payment ID
   * @return      void
   */
-function eddcf_record_commission_note( $recipient, $commission_amount, $rate, $download_id, $commission_id, $payment_id ) {
+function eddcf_record_commission_fee_note( $recipient, $commission_amount, $rate, $download_id, $commission_id, $payment_id ) {
 	$commission = new EDD_Commission( $commission_id );
 	$download = new EDD_Download( $download_id );
 
@@ -48,9 +48,6 @@ function eddcf_record_commission_note( $recipient, $commission_amount, $rate, $d
 	// Get the commission fee recipient rate
 	$fee_rate = eddcf_get_recipient_rate( $download_id, $recipient );
 
-	// Recalculate the base commission amount, we can't use $commission_amount since it might be 0.00
-	$base_amount = eddcf_calc_base_commission_amount( $commission_id );
-
 	// Use the correct wording for the note if disable fee adjustment is enabled
 	if ( true === (bool) edd_get_option( 'edd_commission_fees_fee_adjustment_disabled', false ) ) {
 		$action = __( 'recorded', 'edd-commission-fees' );
@@ -61,7 +58,7 @@ function eddcf_record_commission_note( $recipient, $commission_amount, $rate, $d
 	// Setup our note
 	$note = sprintf(
 		__( 'Commission fee of %s %s to %s for %s &ndash; <a href="%s">View</a>', 'edd-commission-fees' ),
-		edd_currency_filter( edd_format_amount( eddcf_calc_commission_fee( $base_amount, $fee_rate, $fee_type ) ) ),
+		edd_currency_filter( edd_format_amount( eddcf_calc_commission_fee( $commission_amount, $fee_rate, $fee_type ) ) ),
 		$action,
 		get_userdata( $recipient )->display_name,
 		$item_purchased,
@@ -71,6 +68,38 @@ function eddcf_record_commission_note( $recipient, $commission_amount, $rate, $d
 	// Store the payment note
 	edd_insert_payment_note( $payment_id, $note );
 }
+add_action( 'eddc_insert_commission', 'eddcf_record_commission_fee_note', 10, 6 );
+
+
+/**
+ * Store a payment note about this commission
+ *
+ * This makes it really easy to find commissions recorded for a specific payment.
+ * Especially useful for when payments are refunded
+ *
+ * @since       2.0
+ * @return      void
+ */
+function eddcf_record_commission_note( $recipient, $commission_amount, $rate, $download_id, $commission_id, $payment_id ) {
+	// Get the commission fee type
+	$fee_type = eddcf_get_commission_fee_type( $download_id );
+
+	// Get the commission fee recipient rate
+	$fee_rate = eddcf_get_recipient_rate( $download_id, $recipient );
+
+	// Get the fee amount
+	$fee_amount = eddcf_calc_commission_fee( $commission_amount, $fee_rate, $fee_type );
+
+	$note = sprintf(
+		__( 'Commission of %s recorded for %s &ndash; <a href="%s">View</a>', 'eddc' ),
+		edd_currency_filter( edd_format_amount( $commission_amount - $fee_amount ) ),
+		get_userdata( $recipient )->display_name,
+		admin_url( 'edit.php?post_type=download&page=edd-commissions&payment=' . $payment_id )
+	);
+
+	edd_insert_payment_note( $payment_id, $note );
+}
+remove_action( 'eddc_insert_commission', 'eddc_record_commission_note', 10, 6 );
 add_action( 'eddc_insert_commission', 'eddcf_record_commission_note', 10, 6 );
 
 
@@ -102,11 +131,8 @@ function eddcf_record_commission_meta( $recipient, $commission_amount, $rate, $d
 	// Get the commission object
 	$commission = eddc_get_commission( $commission_id );
 
-	// Recalculate the base commission amount, we can't use $commission_amount since it might be 0.00
-	$base_amount = eddcf_calc_base_commission_amount( $commission_id );
-
 	// Calculate the commission fee amount
-	$fee_amount = eddcf_calc_commission_fee( $base_amount, $fee_rate, $fee_type );
+	$fee_amount = eddcf_calc_commission_fee( $commission_amount, $fee_rate, $fee_type );
 
 	// Setup our commission meta args
 	$args = apply_filters( 'eddcf_record_commission_meta_args', array(
@@ -114,7 +140,7 @@ function eddcf_record_commission_meta( $recipient, $commission_amount, $rate, $d
 		'rate' 		=> $fee_rate,
 		'type'		=> $fee_type,
 		'status'	=> 'unpaid',
-		'base'		=> $base_amount
+		'base'		=> $commission_amount
 	) );
 
 	// Store the commission meta

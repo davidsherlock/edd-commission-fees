@@ -30,11 +30,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return      string $message - the modified email body/message
  */
 function eddcf_parse_template_tags( $message, $user_id, $commission_amount, $rate, $download_id, $commission_id ) {
-
 	$fee_type = eddcf_get_commission_fee_type( $download_id );
 	$fee_rate = eddcf_get_recipient_rate( $download_id, $user_id );
-	$base_amount = eddcf_calc_base_commission_amount( $commission_id );
-	$fee_amount = eddcf_calc_commission_fee( $base_amount, $fee_rate, $fee_type );
+	$fee_amount = eddcf_calc_commission_fee( $commission_amount, $fee_rate, $fee_type );
 
 	$message = str_replace( '{fee}', html_entity_decode( edd_currency_filter( edd_format_amount( $fee_amount ) ) ), $message );
 	$message = str_replace( '{fee_rate}', wp_specialchars_decode( eddc_format_rate( $fee_rate, $fee_type ), ENT_QUOTES ), $message );
