@@ -1,0 +1,439 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Easy Digital Downloads - Commission Fees\n"
+"POT-Creation-Date: 2018-02-01 12:06+0000\n"
+"PO-Revision-Date: 2018-02-01 12:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: edd-commission-fees.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: edd-commission-fees.php:222
+msgid ""
+"EDD Commission Fees: Your version of EDD Commissions must be updated to "
+"version 3.4.6 or later to use the Commission Fees extension in conjunction "
+"with Commissions."
+msgstr ""
+
+#: includes/admin/classes/EDD_C_List_Table.php:27
+msgid "Revoke Fees"
+msgstr ""
+
+#: includes/admin/classes/EDD_C_List_Table.php:28
+msgid "Recalculate Fees"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:73
+msgid "ID"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:74
+msgid "User ID"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:75
+msgid "User"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:76
+#, php-format
+msgid "%s ID"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:77
+#, php-format
+msgid "%s Name"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:78
+msgid "Payment ID"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:79
+#: includes/admin/commissions.php:65
+msgid "Amount"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:80
+msgid "Currency"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:81
+#: includes/admin/metabox.php:52
+msgid "Type"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:82
+msgid "Rate"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:83
+msgid "Status"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:84
+#: includes/admin/commissions.php:73
+msgid "Fee Amount"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:85
+#: includes/admin/commissions.php:90
+msgid "Fee Rate"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:86
+msgid "Fee Type"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:87
+#: includes/admin/commissions.php:82
+msgid "Fee Status"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:88
+msgid "Date Created"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:89
+msgid "Date Paid"
+msgstr ""
+
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:136
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:137
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:144
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:145
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:146
+#: includes/admin/classes/class-batch-export-commission-fees-report.php:147
+msgid "N/A"
+msgstr ""
+
+#: includes/admin/commission-actions.php:74
+msgid "Nonce verification failed"
+msgstr ""
+
+#: includes/admin/commission-actions.php:74
+msgid "Error"
+msgstr ""
+
+#: includes/admin/commission-filters.php:26 includes/admin/metabox.php:90
+#: includes/admin/metabox.php:91 includes/short-codes.php:109
+msgid "Fee"
+msgstr ""
+
+#: includes/admin/commissions.php:28
+msgid "Invalid commission specified."
+msgstr ""
+
+#: includes/admin/commissions.php:42 includes/admin/customers.php:36
+#: includes/admin/reports.php:28
+msgid "Commission Fees"
+msgstr ""
+
+#: includes/admin/commissions.php:43
+msgid "This commission record does not have fees."
+msgstr ""
+
+#: includes/admin/commissions.php:57
+msgid "Commission ID"
+msgstr ""
+
+#: includes/admin/commissions.php:99
+msgid "Base Amount"
+msgstr ""
+
+#: includes/admin/commissions.php:106
+msgid "Actions:"
+msgstr ""
+
+#: includes/admin/commissions.php:111
+msgid "Edit Commission"
+msgstr ""
+
+#: includes/admin/commissions.php:117
+msgid "Recalculate Fee"
+msgstr ""
+
+#: includes/admin/commissions.php:121
+msgid "Revoke Fee"
+msgstr ""
+
+#: includes/admin/commissions.php:139
+msgid "No actions available for this commission"
+msgstr ""
+
+#: includes/admin/commissions.php:149
+msgid "Update Commission"
+msgstr ""
+
+#: includes/admin/customers.php:41 includes/short-codes.php:66
+msgid "Unpaid Fees"
+msgstr ""
+
+#: includes/admin/customers.php:42 includes/short-codes.php:67
+msgid "Paid Fees"
+msgstr ""
+
+#: includes/admin/customers.php:43 includes/short-codes.php:68
+msgid "Revoked Fees"
+msgstr ""
+
+#: includes/admin/customers.php:58
+msgid "No commission fees found"
+msgstr ""
+
+#: includes/admin/export-filters.php:30
+msgid "Fees"
+msgstr ""
+
+#: includes/admin/export-filters.php:46
+msgid ""
+"<p><strong>Fees Report</strong><br />Provides a list of all commission "
+"records for the dates and status selected. Includes fee details for "
+"segmentation, reporting and accounting purposes.</p>"
+msgstr ""
+
+#: includes/admin/metabox.php:51
+msgid "Fee Type:"
+msgstr ""
+
+#: includes/admin/metabox.php:52
+msgid ""
+"With commissions enabled, you will need to specify who to assign commission "
+"fees to. Commission fees can ether be a flat amount or percentage based."
+msgstr ""
+
+#: includes/admin/metabox.php:57
+msgid "Flat"
+msgstr ""
+
+#: includes/admin/metabox.php:58
+msgid "Percentage"
+msgstr ""
+
+#: includes/admin/metabox.php:71
+msgid "Select the type of commission(s) fees to record."
+msgstr ""
+
+#: includes/admin/metabox.php:92
+msgid ""
+"Enter the flat or percentage rate fee for each user. If no rate is entered, "
+"the default rate for the user will be used. If no user rate is set, the "
+"global default rate will be used. Currency and percent symbols are not "
+"required."
+msgstr ""
+
+#: includes/admin/metabox.php:111 includes/admin/metabox.php:130
+msgid "Fee for this user"
+msgstr ""
+
+#: includes/admin/reports.php:199
+msgid "Commissions"
+msgstr ""
+
+#: includes/admin/reports.php:205
+msgid "Commissions Paid Over Time"
+msgstr ""
+
+#: includes/admin/reports.php:210
+#, php-format
+msgid "Showing commission fees paid by %s"
+msgstr ""
+
+#: includes/admin/reports.php:211
+msgid "clear"
+msgstr ""
+
+#: includes/admin/reports.php:220
+msgid "Total commission fees for period shown: "
+msgstr ""
+
+#: includes/admin/settings.php:32
+msgid "Fee Settings"
+msgstr ""
+
+#: includes/admin/settings.php:39
+msgid "Default rate"
+msgstr ""
+
+#: includes/admin/settings.php:40
+#, php-format
+msgid ""
+"Enter the default fee rate recipients should be charged. This can be "
+"overwritten on a per-product basis. 0.25 = %s"
+msgstr ""
+
+#: includes/admin/settings.php:46
+#, php-format
+msgid "Allow %s Commissions"
+msgstr ""
+
+#: includes/admin/settings.php:47
+msgid ""
+"This option determines whether or not zero-value commissions are recorded if "
+"the commission fee is greater (or equal) to the original commission amount."
+msgstr ""
+
+#: includes/admin/settings.php:51
+msgid "Yes, record zero value commissions"
+msgstr ""
+
+#: includes/admin/settings.php:52
+msgid "No, do not record zero value commissions"
+msgstr ""
+
+#: includes/admin/settings.php:54
+msgid "Allow zero value commissions"
+msgstr ""
+
+#: includes/admin/settings.php:55
+#, php-format
+msgid ""
+"By default, to avoid negative commission values being recorded, if the "
+"calculated commission fee is greater (or equal) to the original commission "
+"amount, the recorded amount is set to %s. By disabling this option, the "
+"original commission amount is left untouched."
+msgstr ""
+
+#: includes/admin/settings.php:59
+msgid "Disable Fee Adjustment"
+msgstr ""
+
+#: includes/admin/settings.php:60
+msgid ""
+"Check this box to disable the commission amount adjustment based on the "
+"calculated fee. Fees will still be calculated and recorded."
+msgstr ""
+
+#: includes/admin/settings.php:65
+msgid "Enable Shortcode Fees"
+msgstr ""
+
+#: includes/admin/settings.php:66
+msgid ""
+"Check this box to enable the display of the recorded fees within the "
+"commission shortcodes."
+msgstr ""
+
+#: includes/admin/settings.php:88
+msgid "The fee charged on the commission amount"
+msgstr ""
+
+#: includes/admin/settings.php:92
+msgid "The commission fee rate"
+msgstr ""
+
+#: includes/classes/class-activation.php:47
+#: includes/classes/class-activation.php:122
+msgid "This plugin"
+msgstr ""
+
+#: includes/classes/class-activation.php:84
+msgid "activate it"
+msgstr ""
+
+#: includes/classes/class-activation.php:87
+msgid "install it"
+msgstr ""
+
+#: includes/classes/class-activation.php:90
+#, php-format
+msgid " requires Easy Digital Downloads! Please %s to continue!"
+msgstr ""
+
+#: includes/classes/class-activation.php:156
+#, php-format
+msgid " requires %sEDD Commissions%s. Please activate it to continue."
+msgstr ""
+
+#: includes/classes/class-activation.php:158
+#, php-format
+msgid " requires %sEDD Commissions%s. Please install it to continue."
+msgstr ""
+
+#: includes/commission-actions.php:53
+msgid "recorded"
+msgstr ""
+
+#: includes/commission-actions.php:55
+msgid "charged"
+msgstr ""
+
+#: includes/commission-actions.php:60
+#, php-format
+msgid "Commission fee of %s %s to %s for %s &ndash; <a href=\"%s\">View</a>"
+msgstr ""
+
+#: includes/commission-actions.php:94
+#, php-format
+msgid "Commission of %s recorded for %s &ndash; <a href=\"%s\">View</a>"
+msgstr ""
+
+#: includes/commission-actions.php:177
+#, php-format
+msgid ""
+"Commission fee revoked for %s due to refunded payment &ndash; <a href=\"%s"
+"\">View</a>"
+msgstr ""
+
+#: includes/short-codes.php:62
+msgid "Commission Fees Overview"
+msgstr ""
+
+#: includes/short-codes.php:82
+msgid "No commissions found"
+msgstr ""
+
+#: includes/user-meta.php:32
+msgid "User's Fee Rate"
+msgstr ""
+
+#: includes/user-meta.php:35
+msgid ""
+"Enter a global commission fee rate for this user. If a rate is not specified "
+"for a product, this rate will be used."
+msgstr ""
+
+#: includes/user-meta.php:39
+msgid "Disable Fees"
+msgstr ""
+
+#: includes/user-meta.php:42
+msgid ""
+"Check this box if you wish to prevent commission fees from being charged to "
+"this user."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Easy Digital Downloads - Commission Fees"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://sellcomet.com/downloads/commission-fees"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Charge vendors an additional flat amount or percentage fee on each "
+"transaction."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Sell Comet"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://sellcomet.com"
+msgstr ""
