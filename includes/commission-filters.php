@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param       array $args The commission args
  * @return      float $new_amount
  */
-function eddcf_process_commission_fee_testing( $args, $commission_id, $payment_id, $download_id ) {
+function eddcf_process_commission_fee( $args, $commission_id, $payment_id, $download_id ) {
 	$disable_fee_adjustment = (bool) edd_get_option( 'edd_commission_fees_fee_adjustment_disabled', false );
 
 	// Return the base commission amount if disable fee adjustments are enabled
@@ -70,4 +70,4 @@ function eddcf_process_commission_fee_testing( $args, $commission_id, $payment_i
 
 	return $args;
 }
-add_filter( 'edd_commission_info', 'eddcf_process_commission_fee_testing', 10, 4 );
+add_filter( 'edd_commission_info', 'eddcf_process_commission_fee', 10, 4 );

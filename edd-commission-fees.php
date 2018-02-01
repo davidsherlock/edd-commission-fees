@@ -3,7 +3,7 @@
  * Plugin Name:     Easy Digital Downloads - Commission Fees
  * Plugin URI:      https://sellcomet.com/downloads/commission-fees
  * Description:     Charge vendors an additional flat amount or percentage fee on each transaction.
- * Version:         1.0.1
+ * Version:         1.0.2
  * Author:          Sell Comet
  * Author URI:      https://sellcomet.com
  * Text Domain:     edd-commission-fees
@@ -61,7 +61,7 @@ if( ! class_exists( 'EDD_Commission_Fees' ) ) {
          */
         private function setup_constants() {
             // Plugin version
-            define( 'EDD_COMMISSION_FEES_VER', '1.0.1' );
+            define( 'EDD_COMMISSION_FEES_VER', '1.0.2' );
 
             // Plugin path
             define( 'EDD_COMMISSION_FEES_DIR', plugin_dir_path( __FILE__ ) );

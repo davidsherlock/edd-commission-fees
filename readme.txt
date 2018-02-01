@@ -89,6 +89,10 @@ OR you can just install it with WordPress by going to Plugins >> Add New >> and 
 
 == Changelog ==
 
+= 1.0.2, February 1, 2018 =
+* Fixed short codes when no fees were present
+* Fixed function Renamed
+
 = 1.0.1, January 30, 2018 =
 * Renamed short code from [edd_commission_fees_overview] to [edd_commission_fees] for ease of use
 * Improved filter usage and general code base improvements

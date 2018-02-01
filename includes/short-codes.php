@@ -122,9 +122,15 @@ function eddcf_user_commissions_fee_table_header() {
  * @return      void
  */
 function eddcf_user_commissions_fee_table_row( $commission ) {
-	$meta = $commission->get_meta( '_edd_commission_fees', true ); ?>
+	$meta = $commission->get_meta( '_edd_commission_fees', true );
 
-	<td class="edd_commission_fee"><?php echo html_entity_decode( edd_currency_filter( edd_format_amount( $meta['fee'] ) ) ); ?></td>
+	if ( ! empty( $meta ) ) { ?>
 
-	<?php
+		<td class="edd_commission_fee"><?php echo html_entity_decode( edd_currency_filter( edd_format_amount( $meta['fee'] ) ) ); ?></td><?php
+
+	} else { ?>
+
+		<td class="edd_commission_fee"><?php echo html_entity_decode( edd_currency_filter( edd_format_amount( 0 ) ) ); ?></td><?php
+
+	}
 }
