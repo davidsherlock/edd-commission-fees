@@ -33,6 +33,9 @@ function eddcf_process_commission_fee( $args, $commission_id, $payment_id, $down
 		return $args['amount'];
 	}
 
+	// Store the base commission amount for use later
+	$base_amount = $args['amount'];
+
 	// Return the base commission amount if user has fees disabled
 	if ( eddcf_user_fee_disabled( $args['user_id'] ) ) {
 		return $args['amount'];
@@ -58,15 +61,16 @@ function eddcf_process_commission_fee( $args, $commission_id, $payment_id, $down
 	// Get the commission fee amount
 	$fee = eddcf_calc_commission_fee( $args['amount'], $rate, $type );
 
+	// If the fee is greater (or equal) to the original commission amount and "Allow 0.00 Values" is set to no, return the original amount
+	if ( floatval( $fee ) >= $base_amount && edd_get_option( 'edd_commission_fees_allow_zero_value', 'yes' ) == 'no' ) {
+		return $args;
+	} elseif ( floatval( $fee ) >= $base_amount ) {
+		$args['amount'] = round( 0, 2 );
+		return $args;
+	}
+
 	// Calculate the commission fee amount
 	$args['amount'] = eddcf_calc_commission_amount( $args['amount'], $rate, $type );
-
-	// If the fee is greater (or equal) to the original commission amount and "Allow 0.00 Values" is set to no, return the original amount
-	if ( floatval( $fee ) >= $args['amount'] && edd_get_option( 'edd_commission_fees_allow_zero_value', 'yes' ) == 'no' ) {
-		return $args['amount'];
-	} elseif ( floatval( $fee ) >= $args['amount'] ) {
-		$args['amount'] = round( 0, 2 );
-	}
 
 	return $args;
 }
